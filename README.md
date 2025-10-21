@@ -8,6 +8,8 @@ MauaGames é um projeto de emulador de jogos retrô desenvolvido para a discipli
 * Raspberry Pi touch display
 * Teclado (para configuração)
 
+![Raspberry Pi 3b conectado ao display touch](imagens/Raspberry Pi conectado ao display.jpg)
+
 ## 🎯 Requisitos do Projeto
 
 O objetivo do projeto era criar um console que atendesse aos seguintes requisitos:
