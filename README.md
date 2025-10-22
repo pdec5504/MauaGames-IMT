@@ -47,6 +47,7 @@ O Gpionext é uma ferramenta que permite mapear botões físicos conectados dire
 * **Instalação:** O Gpionext foi clonado do repositório Git e instalado via script (`sudo ./install.sh`). Durante a instalação, foi configurado para iniciar automaticamente no boot do sistema.
 * **Configuração:** Através do comando `sudo gpionext config`, um menu permite associar cada pino GPIO a um botão de controle específico (ex: "A", "B", "Start").
 * **Detecção:** Após salvar a configuração, o Gpionext cria um dispositivo virtual que o EmulationStation (a interface do RetroPie) detecta automaticamente.
+
 * ⚠️**Observação:** Durante os testes deste projeto, apesar da configuração de software estar correta, não foi possível ler os inputs do controle. A suspeita é de um defeito de hardware, possivelmente nos pinos GPIO do Raspberry Pi utilizado.
 
 ### 2. Sincronização de Saves na Nuvem (Rclone)
@@ -89,27 +90,28 @@ Os scripts receberam permissão de execução (`chmod +x`) e o sistema foi reini
 
 O sistema foi validado com sucesso: ao iniciar um jogo (ex: Mario 64), jogar para criar um novo save e sair, o arquivo de save correspondente apareceu no Google Drive com o timestamp atualizado, confirmando que a sincronização automática estava funcionando.
 
-## 🧩 Diagrama de blocos
+## 🧩 Diagrama de Blocos
 
 ```mermaid
 flowchart TB
-  subgraph Cloud["🌐 Internet / Google Drive"]
+  subgraph Cloud["Internet / Google Drive"]
     GD[Google Drive API]
   end
 
-  subgraph Pi["💻 Raspberry Pi 3b"]
-    ES[RetroPie / EmulationStation<br/>(Emuladores)]
-    GP[GPIONext (GPIO → virtual USB)]
-    SD[Diretório de saves<br/>(/home/pi/RetroPie/saves)]
-    SC[Scripts<br/>(runcommand-onstart / runcommand-onend)]
+  subgraph Pi["Raspberry Pi 3b"]
+    ES["RetroPie / EmulationStation\n(Emuladores)"]
+    GP["GPIONext (GPIO -> virtual USB)"]
+    SD["Diretório de saves\n(/home/pi/RetroPie/saves)"]
+    SC["Scripts\n(runcommand-onstart / runcommand-onend)"]
   end
 
-  Controls[🎮 Controles<br/>(USB / GPIO)]
-  
+  Controls["Controles\n(USB / GPIO)"]
+
   GD -->|HTTPS (rclone sync)| SC
   Controls -->|USB / virtual USB| ES
-  Controls -->|GPIO| GP -->|Dispositivo virtual| ES
-  ES -->|Lê / grava saves| SD
-  SC -->|Sync bidirecional| SD
-  SC -->|Usa rclone| GD
+  Controls -->|GPIO| GP
+  GP -->|dispositivo virtual| ES
+  ES -->|lê / grava saves| SD
+  SC -->|sync bidirecional| SD
+  SC -->|usa rclone| GD
 ```
