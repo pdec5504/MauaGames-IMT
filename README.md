@@ -92,4 +92,4 @@ O sistema foi validado com sucesso: ao iniciar um jogo (ex: Mario 64), jogar par
 
 ## 🧩 Diagrama de Blocos
 
-![Diagrama de Blocos](diagrama_microcontrolador_t2_t3.png)
+![Diagrama de Blocos](imagens/diagrama_microcontrolador_t2_t3.png)
