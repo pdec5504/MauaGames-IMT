@@ -28,8 +28,7 @@ O objetivo do projeto era criar um console que atendesse aos seguintes requisito
 2.  Foi configurado um perfil de usuário "MAUAGAMES", assim como o acesso à rede e o mapeamento padrão do teclado.
 3.  O SSH foi habilitado para permitir a instalação de componentes e a configuração remota a partir de outro dispositivo.
 4.  As ROMs (jogos) foram transferidas do computador local para a pasta de jogos do RetroPie via SSH.
-    * *Comando de exemplo:*
-        ```bash
+    * ```bash
         scp -r C:\retropie\roms\* MAUAGAMES@172.20.10.7:~/RetroPie/roms/
         ```
 ![Configuração de acesso à rede do RetroPie](imagens/tela_configuracao_retropie_wifi.jpg)  
@@ -48,7 +47,7 @@ O Gpionext é uma ferramenta que permite mapear botões físicos conectados dire
 * **Instalação:** O Gpionext foi clonado do repositório Git e instalado via script (`sudo ./install.sh`). Durante a instalação, foi configurado para iniciar automaticamente no boot do sistema.
 * **Configuração:** Através do comando `sudo gpionext config`, um menu permite associar cada pino GPIO a um botão de controle específico (ex: "A", "B", "Start").
 * **Detecção:** Após salvar a configuração, o Gpionext cria um dispositivo virtual que o EmulationStation (a interface do RetroPie) detecta automaticamente.
-* **Observação:** Durante os testes deste projeto, apesar da configuração de software estar correta, não foi possível ler os inputs do controle. A suspeita é de um defeito de hardware, possivelmente nos pinos GPIO do Raspberry Pi utilizado.
+* ⚠️**Observação:** Durante os testes deste projeto, apesar da configuração de software estar correta, não foi possível ler os inputs do controle. A suspeita é de um defeito de hardware, possivelmente nos pinos GPIO do Raspberry Pi utilizado.
 
 ### 2. Sincronização de Saves na Nuvem (Rclone)
 
@@ -64,6 +63,7 @@ O processo foi dividido em três etapas cruciais:
 
 **1. Configuração do Rclone**
 O Rclone foi instalado (`sudo apt install rclone`) e configurado interativamente via SSH com o comando `rclone config`. Foi criado um novo "remote" (tipo 'n') chamado `gdrive`, conectado ao Google Drive (opção 18 no menu) após a autenticação via token em um navegador.
+**Segurança de transporte:** O Rclone comunica-se com o Google Drive usando HTTPS/TLS por padrão (autenticação via OAuth2), garantindo que os arquivos de save sejam transferidos de forma criptografada.
 
 **2. Centralização dos Diretórios de Saves**
 Para garantir que todos os emuladores lessem e escrevessem na mesma pasta, todos os saves foram centralizados em `/home/pi/RetroPie/saves`.
@@ -88,3 +88,28 @@ Os scripts receberam permissão de execução (`chmod +x`) e o sistema foi reini
 #### Verificação
 
 O sistema foi validado com sucesso: ao iniciar um jogo (ex: Mario 64), jogar para criar um novo save e sair, o arquivo de save correspondente apareceu no Google Drive com o timestamp atualizado, confirmando que a sincronização automática estava funcionando.
+
+## 🧩 Diagrama de blocos
+
+```mermaid
+flowchart TB
+  subgraph Cloud["🌐 Internet / Google Drive"]
+    GD[Google Drive API]
+  end
+
+  subgraph Pi["💻 Raspberry Pi 3b"]
+    ES[RetroPie / EmulationStation<br/>(Emuladores)]
+    GP[GPIONext (GPIO → virtual USB)]
+    SD[Diretório de saves<br/>(/home/pi/RetroPie/saves)]
+    SC[Scripts<br/>(runcommand-onstart / runcommand-onend)]
+  end
+
+  Controls[🎮 Controles<br/>(USB / GPIO)]
+  
+  GD -->|HTTPS (rclone sync)| SC
+  Controls -->|USB / virtual USB| ES
+  Controls -->|GPIO| GP -->|Dispositivo virtual| ES
+  ES -->|Lê / grava saves| SD
+  SC -->|Sync bidirecional| SD
+  SC -->|Usa rclone| GD
+```
