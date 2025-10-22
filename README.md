@@ -92,26 +92,4 @@ O sistema foi validado com sucesso: ao iniciar um jogo (ex: Mario 64), jogar par
 
 ## 🧩 Diagrama de Blocos
 
-```mermaid
-flowchart TB
-  subgraph Cloud["Internet / Google Drive"]
-    GD[Google Drive API]
-  end
-
-  subgraph Pi["Raspberry Pi 3b"]
-    ES["RetroPie / EmulationStation\n(Emuladores)"]
-    GP["GPIONext (GPIO -> virtual USB)"]
-    SD["Diretório de saves\n(/home/pi/RetroPie/saves)"]
-    SC["Scripts\n(runcommand-onstart / runcommand-onend)"]
-  end
-
-  Controls["Controles\n(USB / GPIO)"]
-
-  GD -->|HTTPS (rclone sync)| SC
-  Controls -->|USB / virtual USB| ES
-  Controls -->|GPIO| GP
-  GP -->|dispositivo virtual| ES
-  ES -->|lê / grava saves| SD
-  SC -->|sync bidirecional| SD
-  SC -->|usa rclone| GD
-```
+![Diagrama de Blocos](diagrama_microcontrolador_t2_t3.png)
