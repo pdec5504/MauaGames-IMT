@@ -98,17 +98,8 @@ O sistema foi validado com sucesso: ao iniciar um jogo (ex: Mario 64), jogar par
 
 ![Diagrama de Blocos](imagens/diagrama_microcontrolador_t2_t3.png)
 
-## Componentes do grupo
+### 👥 Equipe
 
-![GuilhermeMartins](imagens/GuilhermeMartins.jpg)
-_RA: 22.00006-2 - [Linkedin](https://www.linkedin.com/in/guilherme-martins-979744345/)_
-
-![Lucas Olivares Borges da Silva](imagens/LucasSilva.jpg)
-_RA: 22.00889-6_
-
-![Murillo Penha](imagens/MurilloStrina.jpg)
-_RA: 22.00730-0 - [Linkedin_](https://www.linkedin.com/in/murillo-strina/)_
-
-![Pedro Campos Dec](imagens/PedroDec.jpg)
-_RA: 22.00787-3 - [Linkedin](https://www.linkedin.com/in/pedro-campos-dec-7514922b8/)_
-
+| <img src="imagens/GuilhermeMartins.jpg" alt="Guilherme Martins" width="150px"> | <img src="imagens/LucasSilva.jpg" alt="Lucas Olivares Borges da Silva" width="150px"> | <img src="imagens/MurilloStrina.jpg" alt="Murillo Penha" width="150px"> | <img src="imagens/PedroDec.jpg" alt="Pedro Campos Dec" width="150px"> |
+| :---: | :---: | :---: | :---: |
+| **Guilherme Martins** <br> RA: 22.00006-2 <br> [Linkedin](https://www.linkedin.com/in/guilherme-martins-979744345/) | **Lucas Olivares Borges da Silva** <br> RA: 22.00889-6 | **Murillo Strina** <br> RA: 22.00730-0 <br> [Linkedin](https://www.linkedin.com/in/murillo-strina/) | **Pedro Campos Dec** <br> RA: 22.00787-3 <br> [Linkedin](https://www.linkedin.com/in/pedro-campos-dec-7514922b8/) |
