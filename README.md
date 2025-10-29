@@ -2,6 +2,10 @@
 
 MauaGames é um projeto de emulador de jogos retrô desenvolvido para a disciplina de Microcontroladores e Sistemas Embarcados no Instituto Mauá de Tecnologia. O sistema utiliza um Raspberry Pi e o software [RetroPie](https://retropie.org.uk/) para emular plataformas de jogos clássicas.
 
+## Vídeo do Projeto
+
+![Vídeo do Projeto](videos/MauaGames.mp4)
+
 ## 🛠️ Componentes Utilizados
 
 - Raspberry Pi 3b
@@ -94,6 +98,17 @@ O sistema foi validado com sucesso: ao iniciar um jogo (ex: Mario 64), jogar par
 
 ![Diagrama de Blocos](imagens/diagrama_microcontrolador_t2_t3.png)
 
-## Vídeo do Projeto
+## Componentes do grupo
 
-![Vídeo do Projeto](videos/MauaGames.mp4)
+![GuilhermeMartins](imagens/GuilhermeMartins.jpg)
+_RA: 22.00006-2 - [Linkedin](https://www.linkedin.com/in/guilherme-martins-979744345/)_
+
+![Lucas Olivares Borges da Silva](imagens/LucasSilva.jpg)
+_RA: 22.00889-6_
+
+![Murillo Penha](imagens/MurilloStrina.jpg)
+_RA: 22.00730-0 - [Linkedin_](https://www.linkedin.com/in/murillo-strina/)_
+
+![Pedro Campos Dec](imagens/PedroDec.jpg)
+_RA: 22.00787-3 - [Linkedin](https://www.linkedin.com/in/pedro-campos-dec-7514922b8/)_
+
