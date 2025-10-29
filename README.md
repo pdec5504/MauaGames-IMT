@@ -35,8 +35,10 @@ O objetivo do projeto era criar um console que atendesse aos seguintes requisito
     * `bash
         scp -r C:\retropie\roms\* MAUAGAMES@172.20.10.7:~/RetroPie/roms/
         `
+        
     ![Configuração de acesso à rede do RetroPie](imagens/tela_configuracao_retropie_wifi.jpg)  
     *Figura 2 — Tela de configuração de rede do RetroPie.\*
+    
 5.  Foi dada prioridade a jogos de Nintendo 64, pois apresentaram melhor desempenho.
 
 ## 🚀 Funcionalidades Principais Implementadas
