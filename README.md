@@ -4,7 +4,9 @@ MauaGames é um projeto de emulador de jogos retrô desenvolvido para a discipli
 
 ## Vídeo do Projeto
 
-![Vídeo do Projeto](videos/MauaGames.mp4)
+<video controls src="videos/MauaGames.mp4" title="Vídeo do Projeto" width="720">
+  Seu navegador não suporta a tag de vídeo.
+</video>
 
 ## 🛠️ Componentes Utilizados
 
@@ -32,13 +34,11 @@ O objetivo do projeto era criar um console que atendesse aos seguintes requisito
 2.  Foi configurado um perfil de usuário "MAUAGAMES", assim como o acesso à rede e o mapeamento padrão do teclado.
 3.  O SSH foi habilitado para permitir a instalação de componentes e a configuração remota a partir de outro dispositivo.
 4.  As ROMs (jogos) foram transferidas do computador local para a pasta de jogos do RetroPie via SSH.
-    * `bash
-        scp -r C:\retropie\roms\* MAUAGAMES@172.20.10.7:~/RetroPie/roms/
-        `
-        
+    - `bash
+  scp -r C:\retropie\roms\* MAUAGAMES@172.20.10.7:~/RetroPie/roms/
+  `
     ![Configuração de acesso à rede do RetroPie](imagens/tela_configuracao_retropie_wifi.jpg)  
-    *Figura 2 — Tela de configuração de rede do RetroPie.\*
-    
+    \*Figura 2 — Tela de configuração de rede do RetroPie.\*
 5.  Foi dada prioridade a jogos de Nintendo 64, pois apresentaram melhor desempenho.
 
 ## 🚀 Funcionalidades Principais Implementadas
@@ -102,6 +102,6 @@ O sistema foi validado com sucesso: ao iniciar um jogo (ex: Mario 64), jogar par
 
 ### 👥 Equipe
 
-| <img src="imagens/GuilhermeMartins.jpg" alt="Guilherme Martins" width="150px"> | <img src="imagens/LucasSilva.png" alt="Lucas Olivares Borges da Silva" width="150px"> | <img src="imagens/MurilloStrina.jpg" alt="Murillo Penha" width="150px"> | <img src="imagens/PedroDec.jpg" alt="Pedro Campos Dec" width="150px"> |
-| :---: | :---: | :---: | :---: |
-| **Guilherme Martins** <br> RA: 22.00006-2 <br> [Linkedin](https://www.linkedin.com/in/guilherme-martins-979744345/) | **Lucas Olivares Borges da Silva** <br> RA: 22.00889-6 | **Murillo Strina** <br> RA: 22.00730-0 <br> [Linkedin](https://www.linkedin.com/in/murillo-strina/) | **Pedro Campos Dec** <br> RA: 22.00787-3 <br> [Linkedin](https://www.linkedin.com/in/pedro-campos-dec-7514922b8/) |
+|                   <img src="imagens/GuilhermeMartins.jpg" alt="Guilherme Martins" width="150px">                    | <img src="imagens/LucasSilva.png" alt="Lucas Olivares Borges da Silva" width="150px"> |               <img src="imagens/MurilloStrina.jpg" alt="Murillo Penha" width="150px">               |                       <img src="imagens/PedroDec.jpg" alt="Pedro Campos Dec" width="150px">                       |
+| :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
+| **Guilherme Martins** <br> RA: 22.00006-2 <br> [Linkedin](https://www.linkedin.com/in/guilherme-martins-979744345/) |                **Lucas Olivares Borges da Silva** <br> RA: 22.00889-6                 | **Murillo Strina** <br> RA: 22.00730-0 <br> [Linkedin](https://www.linkedin.com/in/murillo-strina/) | **Pedro Campos Dec** <br> RA: 22.00787-3 <br> [Linkedin](https://www.linkedin.com/in/pedro-campos-dec-7514922b8/) |
