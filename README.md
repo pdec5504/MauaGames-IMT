@@ -4,9 +4,7 @@ MauaGames é um projeto de emulador de jogos retrô desenvolvido para a discipli
 
 ## Vídeo do Projeto
 
-<video controls src="videos/MauaGames.mp4" title="Vídeo do Projeto" width="720">
-  Seu navegador não suporta a tag de vídeo.
-</video>
+[![Assista ao Vídeo do Projeto](https://img.youtube.com/vi/NNidmGGiWNA/0.jpg)](https://www.youtube.com/watch?v=NNidmGGiWNA)
 
 ## 🛠️ Componentes Utilizados
 
@@ -33,12 +31,11 @@ O objetivo do projeto era criar um console que atendesse aos seguintes requisito
 1.  O sistema operacional RetroPie foi baixado e instalado, e o display foi conectado ao Raspberry Pi.
 2.  Foi configurado um perfil de usuário "MAUAGAMES", assim como o acesso à rede e o mapeamento padrão do teclado.
 3.  O SSH foi habilitado para permitir a instalação de componentes e a configuração remota a partir de outro dispositivo.
-4.  As ROMs (jogos) foram transferidas do computador local para a pasta de jogos do RetroPie via SSH.
-    - `bash
-  scp -r C:\retropie\roms\* MAUAGAMES@172.20.10.7:~/RetroPie/roms/
-  `
+4.  As ROMs (jogos) foram transferidas do computador local para a pasta de jogos do RetroPie via SSH. - `bash
+scp -r C:\retropie\roms\* MAUAGAMES@172.20.10.7:~/RetroPie/roms/
+`
     ![Configuração de acesso à rede do RetroPie](imagens/tela_configuracao_retropie_wifi.jpg)  
-    \*Figura 2 — Tela de configuração de rede do RetroPie.\*
+     \*Figura 2 — Tela de configuração de rede do RetroPie.\*
 5.  Foi dada prioridade a jogos de Nintendo 64, pois apresentaram melhor desempenho.
 
 ## 🚀 Funcionalidades Principais Implementadas
